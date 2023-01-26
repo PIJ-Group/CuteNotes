@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetLeft="5dp"
+    android:insetRight="5dp"
+>
+    <shape>
+        <gradient
+            android:angle="0"
+            android:centerColor="#000000"
+            android:endColor="#000000"
+            android:height="2dp"
+            android:startColor="#000000" />
+
+        <size android:height="3dp" />
+    </shape>
+</inset>
