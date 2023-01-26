@@ -43,7 +43,7 @@
         android:layout_marginTop="32dp"
         android:fontFamily="@font/cute_notes"
         android:text="@string/cu"
-        android:textColor="#673AB7"
+        android:textColor="@color/blue_03"
         android:textSize="52sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
@@ -55,7 +55,7 @@
         android:layout_marginTop="32dp"
         android:fontFamily="@font/cute_notes"
         android:text="@string/te"
-        android:textColor="#673AB7"
+        android:textColor="@color/blue_02"
         android:textSize="52sp"
         app:layout_constraintStart_toEndOf="@+id/splash_cu"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
@@ -67,7 +67,7 @@
         android:layout_marginTop="32dp"
         android:fontFamily="@font/cute_notes"
         android:text="@string/notes"
-        android:textColor="#673AB7"
+        android:textColor="@color/blue_01"
         android:textSize="52sp"
         app:layout_constraintStart_toEndOf="@+id/splash_te"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
