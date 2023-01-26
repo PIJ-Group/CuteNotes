@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CuteNotes</string>
+    <string name="todo">TODO</string>
+    <string name="cu">Cu</string>
+    <string name="te">te</string>
+    <string name="notes">Notes</string>
+    <string name="made_by">Made By</string>
+</resources>
