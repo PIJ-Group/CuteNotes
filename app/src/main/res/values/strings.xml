@@ -10,4 +10,14 @@
     <string name="hintPass">password</string>
     <string name="login">Login</string>
     <string name="crea_una_cuenta">Crea una cuenta</string>
+    <string name="register_ok">Usuario creado</string>
+    <string name="fail">Usuario existente</string>
+    <string name="auth_fail">Autenticación fallida</string>
+    <string name="task">task</string>
+    <string name="addtask">addtask</string>
+    <string name="deletetask">deleteTask</string>
+    <string name="delete">deleted task</string>
+    <string name="Update">updated task</string>
+    <string name="add">add</string>
+    <string name="logout">logout</string>
 </resources>

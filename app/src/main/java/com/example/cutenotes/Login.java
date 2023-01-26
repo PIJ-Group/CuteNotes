@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.Objects;
 
 public class Login extends AppCompatActivity {
@@ -60,7 +62,7 @@ public class Login extends AppCompatActivity {
                                 Toast toast = new Toast(getApplicationContext());
                                 LayoutInflater inflater = getLayoutInflater();
                                 View layout = inflater.inflate(R.layout.toast,
-                                        (ViewGroup) findViewById(R.id.lytLayout));
+                                (ViewGroup) findViewById(R.id.lytLayout));
                                 TextView txtMsg = (TextView)layout.findViewById(R.id.txtMensaje);
                                 txtMsg.setText(R.string.auth_fail);
                                 toast.setDuration(Toast.LENGTH_SHORT);
@@ -116,8 +118,7 @@ public class Login extends AppCompatActivity {
                                 toast.setDuration(Toast.LENGTH_SHORT);
                                 toast.setView(layout);
                                 toast.show();
-                                Intent intent = new Intent(Login.this, MainActivity.class);
-                                startActivity(intent);
+
                             }
                         });
             }
