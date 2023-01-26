@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -62,8 +61,8 @@ public class Login extends AppCompatActivity {
                                 Toast toast = new Toast(getApplicationContext());
                                 LayoutInflater inflater = getLayoutInflater();
                                 View layout = inflater.inflate(R.layout.toast,
-                                (ViewGroup) findViewById(R.id.lytLayout));
-                                TextView txtMsg = (TextView)layout.findViewById(R.id.txtMensaje);
+                                        findViewById(R.id.lytLayout));
+                                TextView txtMsg = layout.findViewById(R.id.txtMensaje);
                                 txtMsg.setText(R.string.auth_fail);
                                 toast.setDuration(Toast.LENGTH_SHORT);
                                 toast.setView(layout);
@@ -97,8 +96,8 @@ public class Login extends AppCompatActivity {
                                 Toast toast = new Toast(getApplicationContext());
                                 LayoutInflater inflater = getLayoutInflater();
                                 View layout = inflater.inflate(R.layout.toast,
-                                        (ViewGroup) findViewById(R.id.lytLayout));
-                                TextView txtMsg = (TextView)layout.findViewById(R.id.txtMensaje);
+                                        findViewById(R.id.lytLayout));
+                                TextView txtMsg = layout.findViewById(R.id.txtMensaje);
                                 txtMsg.setText(R.string.register_ok);
                                 toast.setDuration(Toast.LENGTH_SHORT);
                                 toast.setView(layout);
@@ -112,8 +111,8 @@ public class Login extends AppCompatActivity {
                                 Toast toast = new Toast(getApplicationContext());
                                 LayoutInflater inflater = getLayoutInflater();
                                 View layout = inflater.inflate(R.layout.toast,
-                                        (ViewGroup) findViewById(R.id.lytLayout));
-                                TextView txtMsg = (TextView)layout.findViewById(R.id.txtMensaje);
+                                        findViewById(R.id.lytLayout));
+                                TextView txtMsg = layout.findViewById(R.id.txtMensaje);
                                 txtMsg.setText(R.string.fail);
                                 toast.setDuration(Toast.LENGTH_SHORT);
                                 toast.setView(layout);

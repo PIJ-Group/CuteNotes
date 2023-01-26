@@ -1,10 +1,5 @@
 package com.example.cutenotes;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -12,12 +7,16 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.EventListener;
@@ -143,23 +142,24 @@ public class MainActivity extends AppCompatActivity {
         final EditText taskEditText = new EditText(this);
 
         AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("New Task")
-                .setMessage(taskContent)
+                .setTitle("Modify Task")
+                .setMessage("Cambiar \"" + taskContent + "\" por: ")
                 .setView(taskEditText)
-                .setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Change", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        //Añadir tarea a la base de datos
+                        //Modificar tarea a la base de datos
                         int position = taskList.indexOf(taskContent);
                         String myTask = taskEditText.getText().toString();
 
                         //Añadir registro en la bbdd
                         db.collection("Tasks").document(taskIdList.get(position)).update("taskName", myTask);
+
                         Toast toast = new Toast(getApplicationContext());
                         LayoutInflater inflater = getLayoutInflater();
                         View layout = inflater.inflate(R.layout.toast,
-                                (ViewGroup) findViewById(R.id.lytLayout));
-                        TextView txtMsg = (TextView) layout.findViewById(R.id.txtMensaje);
+                                findViewById(R.id.lytLayout));
+                        TextView txtMsg = layout.findViewById(R.id.txtMensaje);
                         txtMsg.setText(R.string.Update);
                         toast.setDuration(Toast.LENGTH_SHORT);
                         toast.setView(layout);
@@ -181,8 +181,8 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = new Toast(getApplicationContext());
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast,
-                (ViewGroup) findViewById(R.id.lytLayout));
-        TextView txtMsg = (TextView) layout.findViewById(R.id.txtMensaje);
+                findViewById(R.id.lytLayout));
+        TextView txtMsg = layout.findViewById(R.id.txtMensaje);
         txtMsg.setText(R.string.delete);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(layout);
