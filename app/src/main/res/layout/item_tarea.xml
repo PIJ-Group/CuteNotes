@@ -26,11 +26,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="56dp"
-        android:backgroundTint="#FFFFFF"
+        android:backgroundTint="#FE789B"
         android:contentDescription="@string/addtask"
-        android:minHeight="48dp"
+
+        android:background="@drawable/roundcorner"
         android:onClick="modifyTask"
-        android:src="@drawable/ic_baseline_note_add_24"
+        android:src="@drawable/add"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -41,11 +42,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
-        android:backgroundTint="#FFFFFF"
+        android:backgroundTint="#FE789B"
         android:contentDescription="@string/deletetask"
-        android:minHeight="48dp"
+
+        android:background="@drawable/roundcorner"
         android:onClick="deleteTask"
-        android:src="@drawable/ic_baseline_delete_forever_24"
+        android:src="@drawable/ic_baseline_done_outline_24"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

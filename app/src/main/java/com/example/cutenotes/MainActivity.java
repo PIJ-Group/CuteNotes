@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         String taskContent = taskTv.getText().toString();
 
         final EditText taskEditText = new EditText(this);
-
+        taskEditText.setText(taskContent);
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("Modify Task")
                 .setMessage("Cambiar \"" + taskContent + "\" por: ")
