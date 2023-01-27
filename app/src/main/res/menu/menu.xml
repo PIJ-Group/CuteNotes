@@ -7,7 +7,7 @@
     <item
         android:id="@+id/newTask"
         android:title="@string/add"
-        android:icon="@mipmap/mas"
+        android:icon="@mipmap/list"
         android:iconTint="@color/black"
         app:showAsAction="always"
         />
