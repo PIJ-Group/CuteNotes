@@ -87,6 +87,7 @@ public class Login extends AppCompatActivity {
                 passText.setError("Campo vacío");
             }else if(password.length() < 6){
                 passText.setError("Contraseña inferior a 6 caracteres");
+
             }else {
 
                 mAuth.createUserWithEmailAndPassword(email, password)
