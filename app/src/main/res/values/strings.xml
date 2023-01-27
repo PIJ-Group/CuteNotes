@@ -16,9 +16,11 @@
     <string name="task">task</string>
     <string name="addtask">addtask</string>
     <string name="deletetask">deleteTask</string>
-    <string name="delete">deleted task</string>
-    <string name="Update">updated task</string>
+    <string name="delete">Tarea terminada</string>
+    <string name="Update">Tarea modificada</string>
     <string name="add">add</string>
     <string name="logout">logout</string>
     <string name="todo1">TODO</string>
+    <string name="add_task">Introduce una tarea</string>
+    <string name="empty_modified_task">No puedes dejar la tarea en blanco</string>
 </resources>

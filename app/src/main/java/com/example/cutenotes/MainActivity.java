@@ -1,5 +1,7 @@
 package com.example.cutenotes;
 
+import static com.example.cutenotes.R.string.empty_modified_task;
+
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -100,10 +102,10 @@ public class MainActivity extends AppCompatActivity {
 
                 final EditText taskEditText = new EditText(this);
                 AlertDialog dialog = new AlertDialog.Builder(this)
-                        .setTitle("New Task")
-                        .setMessage("Task:")
+                        .setTitle("Nueva tarea")
+                        .setMessage("¿Que tienes pendiente?")
                         .setView(taskEditText)
-                        .setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("Añadir", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 //Añadir tarea a la base de datos
@@ -113,11 +115,22 @@ public class MainActivity extends AppCompatActivity {
                                 task.put("taskName", myTask);
                                 task.put("emailUser", emailUser);
 
+                                if(myTask.isEmpty()){
+                                    Toast toast = new Toast(getApplicationContext());
+                                    LayoutInflater inflater = getLayoutInflater();
+                                    View layout = inflater.inflate(R.layout.toast,
+                                            findViewById(R.id.lytLayout));
+                                    TextView txtMsg = layout.findViewById(R.id.txtMensaje);
+                                    txtMsg.setText(R.string.add_task);
+                                    toast.setDuration(Toast.LENGTH_SHORT);
+                                    toast.setView(layout);
+                                    toast.show();
+                                }else
                                 //Añadir registro en la bbdd
                                 db.collection("Tasks").add(task);
                             }
                         })
-                        .setNegativeButton("Cancel", null)
+                        .setNegativeButton("Cancelar", null)
                         .create();
                 dialog.show();
                 return true;
@@ -142,32 +155,44 @@ public class MainActivity extends AppCompatActivity {
         final EditText taskEditText = new EditText(this);
         taskEditText.setText(taskContent);
         AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("Modify Task")
+                .setTitle("Modificar tarea")
                 .setMessage("Cambiar \"" + taskContent + "\" por: ")
                 .setView(taskEditText)
-                .setPositiveButton("Change", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Cambiar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //Modificar tarea a la base de datos
                         int position = taskList.indexOf(taskContent);
                         String myTask = taskEditText.getText().toString();
 
-                        //Añadir registro en la bbdd
-                        db.collection("Tasks").document(taskIdList.get(position)).update("taskName", myTask);
+                        //Modificar registro en la bbdd
+                        if(myTask.isEmpty()){
+                            Toast toast = new Toast(getApplicationContext());
+                            LayoutInflater inflater = getLayoutInflater();
+                            View layout = inflater.inflate(R.layout.toast,
+                                    findViewById(R.id.lytLayout));
+                            TextView txtMsg = layout.findViewById(R.id.txtMensaje);
+                            txtMsg.setText(empty_modified_task);
+                            toast.setDuration(Toast.LENGTH_SHORT);
+                            toast.setView(layout);
+                            toast.show();
+                        }else {
+                            db.collection("Tasks").document(taskIdList.get(position)).update("taskName", myTask);
 
-                        Toast toast = new Toast(getApplicationContext());
-                        LayoutInflater inflater = getLayoutInflater();
-                        View layout = inflater.inflate(R.layout.toast,
-                                findViewById(R.id.lytLayout));
-                        TextView txtMsg = layout.findViewById(R.id.txtMensaje);
-                        txtMsg.setText(R.string.Update);
-                        toast.setDuration(Toast.LENGTH_SHORT);
-                        toast.setView(layout);
-                        toast.show();
+                            Toast toast = new Toast(getApplicationContext());
+                            LayoutInflater inflater = getLayoutInflater();
+                            View layout = inflater.inflate(R.layout.toast,
+                                    findViewById(R.id.lytLayout));
+                            TextView txtMsg = layout.findViewById(R.id.txtMensaje);
+                            txtMsg.setText(R.string.Update);
+                            toast.setDuration(Toast.LENGTH_SHORT);
+                            toast.setView(layout);
+                            toast.show();
+                        }
 
                     }
                 })
-                .setNegativeButton("Cancel", null)
+                .setNegativeButton("Cancelar", null)
                 .create();
         dialog.show();
     }
