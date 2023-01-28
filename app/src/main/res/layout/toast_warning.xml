@@ -24,6 +24,6 @@
         android:paddingStart="15dp"
         android:textSize="18sp"
         android:text="@string/usuario_warning"
-        android:textColor="@color/white"/>
+        android:textColor="@color/black"/>
 
 </LinearLayout>
