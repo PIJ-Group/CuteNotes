@@ -36,7 +36,7 @@
         android:src="@drawable/add"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.631"
+        app:layout_constraintHorizontal_bias="0.97"
         app:layout_constraintStart_toEndOf="@+id/item"
         app:layout_constraintTop_toTopOf="parent" />
 
