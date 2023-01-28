@@ -23,4 +23,26 @@
     <string name="todo1">TODO</string>
     <string name="add_task">Introduce una tarea</string>
     <string name="empty_modified_task">No puedes dejar la tarea en blanco</string>
+    <string name="usuario_warning">usuario_warning</string>
+    <string name="usuario_ok">usuario_ok</string>
+    <string name="autenticacion_fallida">Autenticación fallida</string>
+    <string name="usuario_creado">Usuario creado</string>
+    <string name="usuario_existente">Usuario existente</string>
+    <string name="introduce_tarea">Introduce una tarea</string>
+    <string name="tarea_añadida">Tarea añadida</string>
+    <string name="campo_vacio">Campo vacío</string>
+    <string name="separacion_email_1">\@</string>
+    <string name="mail_no_valido">Email no válido</string>
+    <string name="contraseña_corta">Contraseña inferior a 6 caracteres</string>
+    <string name="nueva_tarea">Nueva tarea</string>
+    <string name="tarea_pendiente">¿Que tienes pendiente?</string>
+    <string name="añadir">Añadir</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="modificar_tarea">Modificar tarea</string>
+    <string name="cambiar">Cambiar \"</string>
+    <string name="por">\"\" por: \"</string>
+    <string name="cambair">Cambiar</string>
+    <string name="tarea_blanco">No puedes dejar la tarea en blanco</string>
+    <string name="tarea_modificada">Tarea modificada</string>
+    <string name="tarea_realizada">Tarea realizada</string>
 </resources>
