@@ -94,4 +94,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botonLogin" />
 
+    <Button
+        android:id="@+id/botonGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/made_tommy_medium"
+        android:text="Acceder con Google"
+        android:drawableLeft="@drawable/google"
+        android:textSize="14sp"
+        app:cornerRadius="32sp"
+        app:iconTint="@color/pink_03"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonRegistro" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

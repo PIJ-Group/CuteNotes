@@ -4,6 +4,7 @@ import static com.example.cutenotes.R.string.empty_modified_task;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,6 +23,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -39,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore db;
     String emailUser;
     ListView listViewTask;
-
+    private GoogleSignInOptions gso;
+    private GoogleSignInClient mGoogleSignInClient;
     List<String> taskList = new ArrayList<>();
     List<String> taskIdList = new ArrayList<>();
     ArrayAdapter<String> myAdapter;
@@ -57,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
         //Actualizar la interfaz de usuario con las tareas del usuario logueado
         updateUi();
 
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
     }
 
@@ -137,8 +149,20 @@ public class MainActivity extends AppCompatActivity {
             case R.id.logout:
                 //cierre de sesión firebase
                 nAuth.signOut();
-                onBackPressed();
-                finish();
+                mGoogleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            Intent loginActivity = new Intent(getApplicationContext(),Login.class);
+                            startActivity(loginActivity);
+                            MainActivity.this.finish();
+
+                        }else{
+                            Toast.makeText(getApplicationContext(),"No se pudo cerrar sesion con Google"
+                                    ,Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -219,6 +243,13 @@ public class MainActivity extends AppCompatActivity {
         toast.setDuration (Toast.LENGTH_LONG);
         toast.setView(view);
         toast.show();
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mGoogleSignInClient.signOut();
+        Intent intent = new Intent(MainActivity.this,Login.class);
+        startActivity(intent);
     }
 
 }
