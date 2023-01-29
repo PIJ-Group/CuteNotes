@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Barra superior de la pantalla donde se visualizan las tareas-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity"
     >
+    <!--Botón para poder añadir tareas-->
     <item
         android:id="@+id/newTask"
         android:title="@string/add"
@@ -11,7 +13,7 @@
         android:iconTint="@color/black"
         app:showAsAction="always"
         />
-
+    <!--Botón para "desloguear" al usuario-->
     <item
         android:id="@+id/logout"
         android:icon="@mipmap/off"

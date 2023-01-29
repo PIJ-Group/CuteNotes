@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--XML donde incluimos los elementos del splash-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,7 +9,7 @@
     android:orientation="horizontal"
     tools:context=".Splash">
 
-
+    <!--Icono animado de la aplicación-->
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView"
         android:layout_width="397dp"
@@ -22,7 +23,7 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/todolist"
         tools:ignore="ImageContrastCheck" />
-
+    <!--Icono de la desarrolladora de la aplicación-->
     <ImageView
         android:id="@+id/logo"
         android:layout_width="70dp"
@@ -34,7 +35,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/splash_te"
         app:srcCompat="@mipmap/logopij_pink" />
-
+    <!--Parte uno del título de la aplicación-->
     <TextView
         android:id="@+id/splash_cu"
         android:layout_width="wrap_content"
@@ -47,7 +48,7 @@
         android:textSize="52dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
-
+    <!--Parte dos del título de la aplicación-->
     <TextView
         android:id="@+id/splash_te"
         android:layout_width="wrap_content"
@@ -59,7 +60,7 @@
         android:textSize="52dp"
         app:layout_constraintStart_toEndOf="@+id/splash_cu"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
-
+    <!--Parte tres del título de la aplicación-->
     <TextView
         android:id="@+id/splash_tasks"
         android:layout_width="wrap_content"
@@ -71,7 +72,7 @@
         android:textSize="48dp"
         app:layout_constraintStart_toEndOf="@+id/splash_te"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
-
+    <!--Caja de texto que da paso al icono de la desarrolladora-->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"

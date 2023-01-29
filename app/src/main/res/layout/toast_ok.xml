@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Toast personalizado para avisos correctos-->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,13 +10,13 @@
     android:background="@drawable/toast_color_and_radius"
     android:gravity="center"
     android:padding="18dp">
-
+    <!--Icono correcto para toast-->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/check"
         />
-
+    <!--Caja de texto que incluirá el mensaje de los toast-->
     <TextView
         android:id="@+id/text_ok"
         android:layout_width="wrap_content"

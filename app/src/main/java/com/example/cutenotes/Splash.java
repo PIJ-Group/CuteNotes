@@ -15,14 +15,17 @@ public class Splash extends AppCompatActivity implements Animation.AnimationList
         setContentView(R.layout.activity_splash);
         getSupportActionBar().hide();
 
+        //Recogida de cajas de texto
         TextView splash_cu = findViewById(R.id.splash_cu);
         TextView splash_te = findViewById(R.id.splash_te);
         TextView splash_tasks = findViewById(R.id.splash_tasks);
 
+        //Carga de animaciones del título de la aplicación
         Animation cu_animation = AnimationUtils.loadAnimation(this,R.anim.cu_anim);
         Animation te_animation = AnimationUtils.loadAnimation(this,R.anim.te_anim);
         Animation tasks_animation = AnimationUtils.loadAnimation(this,R.anim.tasks_anim);
 
+        //Arranque de las animaciones
         splash_cu.startAnimation(cu_animation);
         splash_te.startAnimation(te_animation);
         splash_tasks.startAnimation(tasks_animation);
@@ -35,6 +38,7 @@ public class Splash extends AppCompatActivity implements Animation.AnimationList
 
     }
 
+    //Finalización de las animaciones del splash
     @Override
     public void onAnimationEnd(Animation animation) {
         Intent intent = new Intent(Splash.this,Login.class);
