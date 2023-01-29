@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Cambios en los colores de la aplicación tomando como base icono-->
     <color name="blue_01">#4ac7e3</color>
     <color name="blue_02">#56d8d8</color>
     <color name="blue_03">#17a3ce</color>

@@ -43,7 +43,7 @@ public class Login extends AppCompatActivity {
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
-
+        //Recoger interior de cada caja
         emailText = findViewById(R.id.cajaCorreo);
         passText = findViewById(R.id.cajaPass);
 
@@ -114,7 +114,10 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        //-------------------Google------------------------//
+        //-------------------Start Google------------------------//
+        //Los métodos siguientes, hasta el comentario "END Google" sirven para poder loguearse
+        //mediante google.
+
         //Configuración del inicio de sesión en Google
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -126,12 +129,11 @@ public class Login extends AppCompatActivity {
 
     }
 
-    //Método para inciar sesión
+    //Método para iniciar sesión
     public void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
-
 
     //Método para verificar el resultado de la actividad de loguearse
     @Override
@@ -150,7 +152,6 @@ public class Login extends AppCompatActivity {
             }
         }
     }
-
 
     //Método para comprobar el token e iniciar sesión si este es válido
     public void firebaseAuthWithGoogle(String idToken) {
@@ -178,6 +179,8 @@ public class Login extends AppCompatActivity {
 
     }
     // [END auth_with_google]
+    //-------------------END Google------------------------//
+
 
     // Método para moverse entre actividades
     private void goHome() {
@@ -185,6 +188,7 @@ public class Login extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //Método para incluir un toast personalizado de confirmación.
     public void toastOk(String msg) {
         LayoutInflater layoutInflater = getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.toast_ok, findViewById(R.id.custom_ok));
@@ -198,6 +202,7 @@ public class Login extends AppCompatActivity {
         toast.show();
     }
 
+    //Método para incluir un toast personalizado de advertencia.
     public void toastWarning(String msg) {
         LayoutInflater layoutInflater = getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.toast_warning, findViewById(R.id.custom_warning));
@@ -210,6 +215,5 @@ public class Login extends AppCompatActivity {
         toast.setView(view);
         toast.show();
     }
-
 
 }

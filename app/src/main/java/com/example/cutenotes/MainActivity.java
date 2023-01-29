@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    //Método para poder incluir el menú
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -109,13 +110,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Método para poder incluir nuevas tareas y desloguearse.
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
+            //Case para añadir la tarea
             case R.id.newTask:
-                //activar el cuadro de diàlogo para añadir tareas
 
+                //Activar el cuadro de diàlogo para añadir tareas
                 final EditText taskEditText = new EditText(this);
                 AlertDialog dialog = new AlertDialog.Builder(this)
                         .setTitle(R.string.nueva_tarea)
@@ -124,15 +127,15 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton(R.string.añadir, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                //Añadir tarea a la base de datos
 
+                                //Añadir tarea a la base de datos
                                 String myTask = taskEditText.getText().toString();
                                 Map<String, Object> task = new HashMap<>();
                                 task.put("taskName", myTask);
                                 task.put("emailUser", emailUser);
 
                                 if(myTask.isEmpty()){
-
+                                    //Toast de advertencia de tarea en blanco
                                     toastWarning(getString(R.string.introduce_tarea));
 
                                 }else {
@@ -148,8 +151,9 @@ public class MainActivity extends AppCompatActivity {
                 dialog.show();
                 return true;
 
+            //Case para desloguearse
             case R.id.logout:
-                //cierre de sesión firebase
+                //Cierre de sesión firebase
                 nAuth.signOut();
 
                 //Cierre de sesión de google a través del método signOut y transición al login
@@ -174,6 +178,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Método para modificar las tareas activas de cada usuario
     public void modifyTask(View view) {
         View parent = (View) view.getParent();
         TextView taskTv = parent.findViewById(R.id.item);
@@ -194,12 +199,12 @@ public class MainActivity extends AppCompatActivity {
 
                         //Modificar registro en la bbdd
                         if(myTask.isEmpty()){
-
+                            //Warning para no dejar la tarea editada en blanco
                             toastWarning(getString(R.string.tarea_blanco));
 
                         }else {
                             db.collection("Tasks").document(taskIdList.get(position)).update("taskName", myTask);
-
+                            //Toast de confirmación de modificación
                             toastOk(getString(R.string.tarea_modificada));
 
                         }
@@ -211,6 +216,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    //Método para poder borrar la tarea ya realizada
     public void deleteTask(View view) {
         View parent = (View) view.getParent();
         TextView taskTv = parent.findViewById(R.id.item);
@@ -223,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Método para incluir un toast personalizado de confirmación.
     public void toastOk(String msg){
         LayoutInflater layoutInflater = getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.toast_ok, (ViewGroup) findViewById(R.id.custom_ok));
@@ -236,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
 
+    //Método para incluir un toast personalizado de advertencia.
     public void toastWarning(String msg){
         LayoutInflater layoutInflater = getLayoutInflater();
         View view = layoutInflater.inflate(R.layout.toast_warning, (ViewGroup) findViewById(R.id.custom_warning));
@@ -248,6 +256,7 @@ public class MainActivity extends AppCompatActivity {
         toast.setView(view);
         toast.show();
     }
+
     //Método para cerrar sesión en google con el botón "atras"
     @Override
     public void onBackPressed() {

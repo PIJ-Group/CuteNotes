@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--XML de la pantalla de login de la aplicación-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login">
-
+    <!--Caja de texto donde alojamos el nombre de la aplicación-->
     <TextView
         android:id="@+id/nombreApp"
         android:layout_width="wrap_content"
@@ -18,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <!--Caja donde se aloja el correo del usuario-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutCorreo"
         android:layout_width="309dp"
@@ -28,7 +29,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombreApp"
         app:startIconDrawable="@drawable/ic_baseline_email_24">
-
+        <!--Interior de la caja de texto, donde modificamos el tipo
+        de texto que se incluirá-->
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/cajaCorreo"
             android:layout_width="314dp"
@@ -40,7 +42,7 @@
             android:textSize="16sp"/>
         <requestFocus/>
     </com.google.android.material.textfield.TextInputLayout>
-
+    <!--Caja donde se aloja la contraseña del usuario-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutPass"
         android:layout_width="309dp"
@@ -51,7 +53,8 @@
         app:layout_constraintTop_toBottomOf="@+id/layoutCorreo"
         app:endIconMode="password_toggle"
         app:startIconDrawable="@drawable/ic_baseline_lock_24">
-
+        <!--Interior de la caja de texto, donde modificamos el tipo
+        de texto que se incluirá-->
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/cajaPass"
             android:layout_width="314dp"
@@ -64,7 +67,7 @@
             android:textSize="16sp"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
-
+    <!--Botón que utilizaremos para "loguear" al usuario-->
     <Button
         android:id="@+id/botonLogin"
         android:layout_width="200dp"
@@ -79,7 +82,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutPass" />
-
+    <!--Caja de texto que servirá de enlace para dar de alta
+    un nuevo usuario-->
     <TextView
         android:id="@+id/botonRegistro"
         android:layout_width="wrap_content"
@@ -93,7 +97,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botonLogin" />
-
+    <!--Botón para poder "loguear" con red social, en este caso
+    con un usuario de Google-->
     <Button
         android:id="@+id/botonGoogle"
         android:layout_width="wrap_content"

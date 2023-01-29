@@ -1,4 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!--Cambios de los colores para el tema de la aplicación-->
     <!-- Base application theme. -->
     <style name="Theme.CuteNotes" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
