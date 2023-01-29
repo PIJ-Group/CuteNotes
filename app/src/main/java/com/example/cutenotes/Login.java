@@ -153,7 +153,7 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    //Método para comprobar el token e iniciar sesión si este es válido
+    //Método para comprobar el token e iniciar sesión si éste es válido
     public void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)

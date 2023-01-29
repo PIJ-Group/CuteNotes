@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         //Actualizar la interfaz de usuario con las tareas del usuario logueado
         updateUi();
         /*Inicializamos la variable gso que recogerá los elementos necesarios para que el usuario
-          inicie sesion*/
+          inicie sesión*/
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -166,8 +166,7 @@ public class MainActivity extends AppCompatActivity {
                             MainActivity.this.finish();
 
                         }else{
-                            Toast.makeText(getApplicationContext(),"No se pudo cerrar sesion con Google"
-                                    ,Toast.LENGTH_LONG).show();
+                            toastWarning(getString(R.string.error_cierre_google));
                         }
                     }
                 });
@@ -193,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton(R.string.cambiar, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        //Modificar tarea a la base de datos
+
                         int position = taskList.indexOf(taskContent);
                         String myTask = taskEditText.getText().toString();
 
