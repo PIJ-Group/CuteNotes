@@ -13,4 +13,7 @@
         <item name="android:statusBarColor">@color/grey</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/blue_01</item>
+    </style>
 </resources>

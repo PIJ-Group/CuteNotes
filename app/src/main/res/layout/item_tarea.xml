@@ -34,7 +34,7 @@
         android:minHeight="48dp"
         android:onClick="modifyTask"
         android:src="@drawable/add"
-        android:textSize="16sp"
+        android:textSize="16dp"
         app:layout_constraintEnd_toStartOf="@+id/button3"
         app:layout_constraintHorizontal_bias="0.631"
         app:layout_constraintStart_toEndOf="@+id/item"
@@ -54,7 +54,7 @@
         android:minHeight="48dp"
         android:onClick="deleteTask"
         android:src="@drawable/ic_baseline_done_outline_24"
-        android:textSize="16sp"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
