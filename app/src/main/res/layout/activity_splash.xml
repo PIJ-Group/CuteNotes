@@ -44,7 +44,7 @@
         android:fontFamily="@font/cute_notes"
         android:text="@string/cu"
         android:textColor="@color/blue_03"
-        android:textSize="52sp"
+        android:textSize="52dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
 
@@ -56,7 +56,7 @@
         android:fontFamily="@font/cute_notes"
         android:text="@string/te"
         android:textColor="@color/blue_02"
-        android:textSize="52sp"
+        android:textSize="52dp"
         app:layout_constraintStart_toEndOf="@+id/splash_cu"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
 
@@ -68,7 +68,7 @@
         android:fontFamily="@font/cute_notes"
         android:text="@string/notes"
         android:textColor="@color/blue_01"
-        android:textSize="52sp"
+        android:textSize="48dp"
         app:layout_constraintStart_toEndOf="@+id/splash_te"
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
 
