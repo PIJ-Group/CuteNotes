@@ -21,7 +21,7 @@
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!--Botoón para editar la tarea-->
+    <!--Botón para editar la tarea-->
     <ImageButton
         android:id="@+id/addTask"
         android:layout_width="wrap_content"

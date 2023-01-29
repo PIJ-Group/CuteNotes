@@ -45,4 +45,5 @@
     <string name="tarea_blanco">No puedes dejar la tarea en blanco</string>
     <string name="tarea_modificada">Tarea modificada</string>
     <string name="tarea_realizada">Tarea realizada</string>
+    <string name="error_cierre_google">No se pudo cerrar sesion con Google</string>
 </resources>
