@@ -64,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Actualizar la interfaz de usuario con las tareas del usuario logueado
         updateUi();
-
+        /*Inicializamos la variable gso que recogerá los elementos necesarios para que el usuario
+          inicie sesion*/
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -150,6 +151,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.logout:
                 //cierre de sesión firebase
                 nAuth.signOut();
+
+                //Cierre de sesión de google a través del método signOut y transición al login
                 mGoogleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -245,6 +248,7 @@ public class MainActivity extends AppCompatActivity {
         toast.setView(view);
         toast.show();
     }
+    //Método para cerrar sesión en google con el botón "atras"
     @Override
     public void onBackPressed() {
         super.onBackPressed();

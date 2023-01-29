@@ -115,7 +115,7 @@ public class Login extends AppCompatActivity {
         });
 
         //-------------------Google------------------------//
-        // Configure Google Sign In
+        //Configuración del inicio de sesión en Google
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -126,14 +126,14 @@ public class Login extends AppCompatActivity {
 
     }
 
-    // [START signin]
+    //Método para inciar sesión
     public void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
 
-    // [START onactivityresult]
+    //Método para verificar el resultado de la actividad de loguearse
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -150,9 +150,9 @@ public class Login extends AppCompatActivity {
             }
         }
     }
-    // [END onactivityresult]
 
-    // [START auth_with_google]
+
+    //Método para comprobar el token e iniciar sesión si este es válido
     public void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)
@@ -169,7 +169,7 @@ public class Login extends AppCompatActivity {
                     }
                 });
     }
-
+    //Método para verificar el estado del usuario actual y movernos entre actividades
     private void updateUI(FirebaseUser user) {
         user = mAuth.getCurrentUser();
         if (user != null) {
@@ -179,6 +179,7 @@ public class Login extends AppCompatActivity {
     }
     // [END auth_with_google]
 
+    // Método para moverse entre actividades
     private void goHome() {
         Intent intent = new Intent(Login.this, MainActivity.class);
         startActivity(intent);
@@ -209,5 +210,6 @@ public class Login extends AppCompatActivity {
         toast.setView(view);
         toast.show();
     }
+
 
 }
